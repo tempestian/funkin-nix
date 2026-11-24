@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "LunchboxScary",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "spirit",
+      "speakerAnimation": "talk",
+      "box": "thorns",
+      "boxAnimation": "enter",
+
+      "text": [
+        "Bunca zamandır burada hapsolduktan sonra gerçek insanlarla ilk temas...",
+        " ve onca kişinin arasında O."
+      ],
+      "speed": 1.0
+    },
+    {
+      "speaker": "spirit",
+      "speakerAnimation": "talk",
+      "box": "thorns",
+      "boxAnimation": "idle",
+
+      "text": [
+        "Bana ve diğer herkese yaptıklarının bedelini babasına bizzat ödeteceğim..."
+      ]
+    },
+    {
+      "speaker": "spirit",
+      "speakerAnimation": "talk",
+      "box": "thorns",
+      "boxAnimation": "idle",
+
+      "text": ["Seni yeneceğim ve benim yerime sen hapsolacaksın."]
+    },
+    {
+      "speaker": "spirit",
+      "speakerAnimation": "talk",
+      "box": "thorns",
+      "boxAnimation": "idle",
+
+      "text": [
+        "Bedenlerinizi ödünç almamın bir sakıncası yoktur, değil mi?",
+        " Bu son derece adil..."
+      ]
+    }
+  ]
+}

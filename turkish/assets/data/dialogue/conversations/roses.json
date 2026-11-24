@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+
+  "backdrop": {
+    "type": "solid",
+    "fadeTime": 2.0,
+    "color": "#BFB3DFD8"
+  },
+
+  "music": {
+    "asset": "Lunchbox",
+    "fadeTime": 2.0,
+    "looped": true
+  },
+
+  "outro": {
+    "type": "fade",
+    "fadeTime": 1.0
+  },
+
+  "dialogue": [
+    {
+      "speaker": "senpai-angry",
+      "speakerAnimation": "talk",
+      "box": "roses",
+      "boxAnimation": "angrySenpai",
+
+      "text": ["Çirkin bir solucana göre fena değilsin."]
+    },
+    {
+      "speaker": "senpai-angry",
+      "speakerAnimation": "talk",
+      "box": "roses",
+      "boxAnimation": "idle",
+
+      "text": [
+        "Ama bu sefer seni oracıkta lime lime edip paramparça edeceğim!"
+      ]
+    },
+    {
+      "speaker": "bf-pixel",
+      "speakerAnimation": "talkEnter",
+      "box": "roses",
+      "boxAnimation": "idle",
+
+      "text": ["Bap biip be be skduu bep"]
+    }
+  ]
+}
