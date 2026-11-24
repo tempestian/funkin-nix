@@ -83,7 +83,8 @@ environment.systemPackages = [
 
 ---
 
-## License
+## License & Legal Notice
 
-Friday Night Funkin' is created by The Funkin' Crew Inc. (Apache 2.0).  
-This flake repository is maintained by [tempestian](https://github.com/tempestian).
+- **Game Engine & Source Code:** Licensed under Apache 2.0.
+- **Game Assets (Music, Art, Characters):** Proprietary and copyright © The Funkin' Crew Inc. All rights reserved.
+- **Packaging & Translations:** Maintained by [tempestian](https://github.com/tempestian). No proprietary assets or binaries are hosted in this repository; assets are retrieved directly from upstream releases at build time.

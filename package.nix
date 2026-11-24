@@ -2,6 +2,7 @@
 , stdenv
 , fetchurl
 , unzip
+, imagemagick
 , buildFHSEnv
 , writeShellScript
 , makeDesktopItem
@@ -50,7 +51,7 @@ let
       inherit (source) hash;
     };
 
-    nativeBuildInputs = [ unzip ];
+    nativeBuildInputs = [ unzip imagemagick ];
 
     unpackPhase = ''
       unzip $src
@@ -58,11 +59,16 @@ let
 
     installPhase = ''
       runHook preInstall
-      mkdir -p $out/share/funkin
+      mkdir -p $out/share/funkin $out/share/pixmaps $out/share/icons/hicolor/150x150/apps
       cp -r linux/bin/* $out/share/funkin/
       ${lib.optionalString withTurkish ''
         cp -r ${./turkish}/* $out/share/funkin/
       ''}
+
+      # Extract icon directly from upstream assets at build time (no proprietary images stored in repo)
+      magick linux/bin/assets/images/icons/icon-bf.png -crop 150x150+0+0 $out/share/pixmaps/funkin.png
+      cp $out/share/pixmaps/funkin.png $out/share/icons/hicolor/150x150/apps/funkin.png
+
       runHook postInstall
     '';
   };
@@ -125,8 +131,8 @@ stdenv.mkDerivation {
     mkdir -p $out/bin $out/share/pixmaps $out/share/icons/hicolor/150x150/apps
     ln -s ${fhs}/bin/${pname} $out/bin/${pname}
 
-    cp ${./funkin.png} $out/share/pixmaps/funkin.png
-    cp ${./funkin.png} $out/share/icons/hicolor/150x150/apps/funkin.png
+    cp ${funkin-unwrapped}/share/pixmaps/funkin.png $out/share/pixmaps/funkin.png
+    cp ${funkin-unwrapped}/share/icons/hicolor/150x150/apps/funkin.png $out/share/icons/hicolor/150x150/apps/funkin.png
 
     runHook postInstall
   '';
@@ -135,7 +141,7 @@ stdenv.mkDerivation {
     description = "Friday Night Funkin' (Linux port with Weekend 1 and libvlc video cutscenes)"
       + (optionalString withTurkish " - Türkçe Hikaye Desteği");
     homepage = "https://github.com/Renan2010/Funkin-Linux";
-    license = licenses.asl20;
+    license = with licenses; [ asl20 unfree ];
     maintainers = [ ];
     platforms = [ "x86_64-linux" ];
     mainProgram = pname;

@@ -46,7 +46,7 @@ nix run github:tempestian/funkin-nix#funkin-tr
   };
 
   outputs = { self, nixpkgs, funkin-nix, ... }@inputs: {
-    nixosConfigurations.myhostname = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.makine-adiniz = nixpkgs.lib.nixosSystem {
       modules = [
         {
           nixpkgs.overlays = [ funkin-nix.overlays.default ];
@@ -83,7 +83,8 @@ environment.systemPackages = [
 
 ---
 
-## Lisans
+## Lisans ve Yasal Bildirim
 
-Friday Night Funkin', The Funkin' Crew Inc. tarafından geliştirilmiştir (Apache 2.0).  
-Bu Flake deposu [tempestian](https://github.com/tempestian) tarafından sürdürülmektedir.
+- **Oyun Motoru ve Kaynak Kodu:** Apache 2.0 ile lisanslanmıştır.
+- **Oyun Varlıkları (Müzik, Çizimler, Karakterler):** The Funkin' Crew Inc. şirketine aittir, tüm hakları saklıdır.
+- **Paketleme ve Çeviriler:** [tempestian](https://github.com/tempestian) tarafından sürdürülmektedir. Bu depoda telif hakkı içeren herhangi bir binary veya görsel barındırılmamaktadır; tüm varlıklar derleme esnasında doğrudan resmi kaynaktan çekilir.
